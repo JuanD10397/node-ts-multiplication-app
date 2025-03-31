@@ -1,3 +1,6 @@
+// HACE LO MISMO QUE app.ts PERO TODO ESTÁ EN ESTE ARCHIVO. 
+// No sigue ninguna arquitectura ni diseño de software
+
 
 import * as fs from 'fs';
 import { yarg } from './config/plugins/yargs.plugin';
