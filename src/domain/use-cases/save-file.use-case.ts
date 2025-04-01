@@ -14,7 +14,7 @@ export interface IOptions {
 
 export class SaveFile implements ISaveFileUseCase {
 
-    construnctor(
+    constructor(
          /** Inyección de Dependencias
           * repository: StorageReposotory */
     ){}

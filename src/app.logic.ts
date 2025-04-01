@@ -3,7 +3,7 @@
 
 
 import * as fs from 'fs';
-import { yarg } from './config/plugins/yargs.plugin';
+import { yarg } from './config/plugins/args.plugin';
 
 // Ejemplo EJECUCIÓN EN CONSOLA: npx ts-node src/app.logic.ts --base 4 -l 7 -s
 
