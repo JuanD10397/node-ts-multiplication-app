@@ -15,6 +15,13 @@ const runCommand = async( args: string[] ) => {
 
 describe('Test args.plugin', () => {
 
+    const originalArgv = process.argv;
+
+    beforeEach(() => {
+        process.argv = originalArgv;
+        jest.resetModules();
+    })
+
     test('Should return default values', async () => {
 
         // agrego argumentos por consola, agrego flag b
@@ -34,4 +41,24 @@ describe('Test args.plugin', () => {
             })
         );
     });
+
+
+    test('Should return congifuration with custom values', async () => {
+
+        const argv = await runCommand(['-b', '3', '-l', '5', '-s', 'true']);
+
+        console.log({ 
+            Argumentos_consola: process.argv, 
+            Yarg_options: argv 
+        });
+
+        expect( argv ).toEqual( expect.objectContaining({
+            b: 3,
+            l: 5,
+            s: true,
+            n: 'multiplication-table',
+            d: './outputs',
+            })
+        );
+    })
 });
